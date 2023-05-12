@@ -1,21 +1,29 @@
 package model;
 
 public class Product {
-    private String id;
+    private int id;
     private String name;
-    private int price;
-    private double quantity;
+    private double price;
+    private int quantity;
     private String mother;
 
     public Product() {
     }
 
-    public Product(String id, String name, int price, double quantity, String mother) {
+    public Product(int id, String name, double price, int quantity, String mother) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.mother = mother;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -26,19 +34,19 @@ public class Product {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public double getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
@@ -59,5 +67,9 @@ public class Product {
                 ", quantity=" + quantity +
                 ", mother='" + mother + '\'' +
                 '}';
+    }
+    public void display(){
+        System.out.printf("\n%-15s%-15s%-15s%-15s%s",
+                this.id, this.name, this.price, this.quantity, this.mother + "\n");
     }
 }

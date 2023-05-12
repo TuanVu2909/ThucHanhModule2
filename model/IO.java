@@ -1,6 +1,9 @@
 package model;
 
+import java.util.List;
+
 public interface IO {
-    void writer();
-    void read();
+    void writer(List<Product> products);
+
+    List<Product> read();
 }

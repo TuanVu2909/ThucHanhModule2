@@ -1,11 +1,17 @@
 package controller;
 
+import FileIO.IOFile;
+import service.ProductManage;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class MainTest {
     public static void main(String[] args) {
         Scanner  scanner = new Scanner(System.in);
-        int choice =-1;
+        ProductManage productManage = new ProductManage();
+        IOFile ioFile = new IOFile();
+        int choice ;
         do {
             System.out.println("----CHƯƠNG TRÌNH QUẢN LÝ SẢN PHẨM----");
             System.out.println("1. Xem danh sách");
@@ -21,18 +27,25 @@ public class MainTest {
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice){
                 case 1:
+                    productManage.display();
                     break;
                 case 2:
+                    productManage.creat();
                     break;
                 case 3:
+                    productManage.update();
                     break;
                 case 4:
+                    productManage.delete();
                     break;
                 case 5:
+                    productManage.sort();
                     break;
                 case 6:
+                    productManage.searchByPrice();
                     break;
                 case 7:
+                    productManage.read();
                     break;
                 case 8:
                     break;
